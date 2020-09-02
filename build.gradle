@@ -11,6 +11,10 @@ mainClassName = 'MyMain'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
+run{
+    standardInput = System.in
+}
+
 repositories {
     mavenCentral()
 }
