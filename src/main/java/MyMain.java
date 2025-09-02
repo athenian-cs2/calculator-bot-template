@@ -18,6 +18,21 @@ public class MyMain {
     return 0.0; // REPLACE WITH YOUR CODE
   }
 
+  // Randomly returns true half the time, and false half the time
+  public static boolean coinFlip() {
+    return false;
+  }
+
+  // Returns true 90% of the time, and false 10% of the time
+  public static boolean riggedCoin() {
+    return false;
+  }
+
+  // Returns a random integer, 1 through 6 (inclusive)
+  public static int dieRoll() {
+    return 0;
+  }
+
   public static void main(String[] args) {
     // You may want to keep these lines of code to test that your methods work
     System.out.println(median(1, 2, 3)); // should be 2

@@ -1,4 +1,5 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
@@ -54,5 +55,39 @@ public class MyTests {
         61.0,
         MyMain.pythagoras(11, 60),
         "The output of the pythagoras theorem with 11 and 60 should be: 61.0");
+  }
+
+  @Test public void testCoinFlip() {
+    // Flip 1000 coins
+    int heads = 0;
+    for (int i=0; i<1000; i++) {
+      heads += MyMain.coinFlip() ? 1 : 0;
+    }
+    assertTrue(heads < 600 && heads > 400, "About half the flips should be heads");
+  }
+
+  @Test public void testRiggedCoin() {
+    // Flip 1000 coins
+    int heads = 0;
+    for (int i=0; i<1000; i++) {
+      heads += MyMain.riggedCoin() ? 1 : 0;
+    }
+    assertTrue(heads > 800, "About 90% of the flips should be heads");
+  }
+
+  @Test public void testDieRoll() {
+    // Roll 1000 dice
+    int[] results = new int[6];
+    for (int i = 0; i < 1000; i++) {
+      int res = MyMain.dieRoll();
+      assertTrue(res >= 1 && res <= 6, "Die rolls must be from 1-6");
+      results[res - 1]++;
+    }
+    assertTrue(results[0] > 50 && results[0] < 300, "About 1/6 of the rolls should be 1s");
+    assertTrue(results[1] > 50 && results[1] < 300, "About 1/6 of the rolls should be 2s");
+    assertTrue(results[2] > 50 && results[2] < 300, "About 1/6 of the rolls should be 3s");
+    assertTrue(results[3] > 50 && results[3] < 300, "About 1/6 of the rolls should be 4s");
+    assertTrue(results[4] > 50 && results[4] < 300, "About 1/6 of the rolls should be 5s");
+    assertTrue(results[5] > 50 && results[5] < 300, "About 1/6 of the rolls should be 6s");
   }
 }
